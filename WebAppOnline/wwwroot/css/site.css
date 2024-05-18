@@ -1,0 +1,42 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    /*color: var(--text-color-header) !important*/;
+    /*font-family: "SVN-Poppins" !important;
+*/
+}
+
+body {
+  margin-bottom: 60px;
+}
+li{
+    padding-right : 10px;
+}
+
+
+.text-color-default {
+    color: var(--text-color-default) !important;
+}
+
+.background-color {
+    background: var(--back-color-orange);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+:root {
+    --bs-body-font-family: 'Poppins', sans-serif;
+    --bs-body-font-weight: 580  ;
+    --text-color-default: gray;
+    --back-color-orange: orange;
+}

@@ -1,0 +1,72 @@
+﻿@model List<TableViewModel>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<form asp-action="CheckTable" method="post">
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Old</th>
+            <th>Address</th>
+            <th></th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr class="row-tr">
+                <td><input asp-for="@Model[i].name" > </td>
+                <td><input asp-for="@Model[i].old" > </td>
+                <td>
+                <select asp-for="@Model[i].address">
+                    <option value="HCM">Hồ Chí Minh</option>
+                    <option value="NT">Ninh Thuận</option>
+                    <option value="HN">Hà Nội</option>
+                </select>    
+                
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success addAccount">Add</button>
+                    <button type="button" class="btn btn-danger removeAccount">Remove</button>
+                </td>
+            </tr>
+        }
+        <button class="btn btn-info" type="submit">Save</button>
+
+
+    </table>
+</form>
+@section Scripts{
+    <script>
+        var total = $(".row-tr").length;
+        //alert(total);
+        $(".addAccount").on("click", function () {
+            if ($(".row-tr").length <= 10) {
+                var source = $(this).closest("tr");
+                var clone = source.clone(true);
+                clone.find('input').slice(0).val('');
+                source.after(clone);
+                var index = source.index();
+                source.nextAll("tr").each(function () {
+                    var newName = "[" + index + "].name";
+                    var newOld = "[" + index + "].old";
+                    var newAddress = "[" + index + "].address";
+                    $(this).find('input').eq(0).attr("name", newName);
+                    $(this).find('input').eq(1).attr("name", newOld);
+                    $(this).find('input').eq(2).attr("name", newAddress);
+
+                    $(this).find('input').each(function () {
+                        var name = $(this).attr("name");
+                    });
+                    index++;
+                });
+            }
+
+        });
+        $(".removeAccount").on("click", function () {
+            $(this).closest("tr").remove();
+        });
+
+
+    </script>
+
+}
