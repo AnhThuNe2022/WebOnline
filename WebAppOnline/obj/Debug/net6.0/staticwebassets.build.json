@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Qcdfx9JrYAEFj5Nfd11R37Z5vbz45xXFw2kFdHOgZBg=",
+  "Hash": "Rdr4Ld26cuUW3lYaAMAhz4udksZ5YIquZQrxILl40Bw=",
   "Source": "WebAppOnline",
   "BasePath": "_content/WebAppOnline",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\thu\\source\\repos\\WebAppOnline\\WebAppOnline\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebAppOnline.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\thu\\source\\repos\\WebAppOnline\\WebAppOnline\\wwwroot\\css\\landingPage.css",
+      "SourceId": "WebAppOnline",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thu\\source\\repos\\WebAppOnline\\WebAppOnline\\wwwroot\\",
+      "BasePath": "_content/WebAppOnline",
+      "RelativePath": "css/landingPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\landingPage.css"
     },
     {
       "Identity": "C:\\Users\\thu\\source\\repos\\WebAppOnline\\WebAppOnline\\wwwroot\\css\\site.css",

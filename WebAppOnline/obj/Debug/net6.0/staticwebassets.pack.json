@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebAppOnline.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\thu\\source\\repos\\WebAppOnline\\WebAppOnline\\wwwroot\\css\\landingPage.css",
+      "PackagePath": "staticwebassets\\css\\landingPage.css"
+    },
+    {
       "Id": "C:\\Users\\thu\\source\\repos\\WebAppOnline\\WebAppOnline\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
