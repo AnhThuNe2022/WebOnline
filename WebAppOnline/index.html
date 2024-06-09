@@ -1,4 +1,699 @@
-﻿<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebAppOnline</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebAppOnline.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header id="myHeader">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <div class="d-flex justify-content-start align-items-center">
+                        <img style="width: 60px" src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716005844/WebASP/img/119998699_619408648744043_605742_ozomv3.png" />
+                        <h3 class="text-center">XITRUM GYM</h3>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                    <ul class="navbar-nav flex-grow-2">
+                        <li class="nav-item">
+                            <a class="nav-link text-color-default" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-color-default" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Home/Login" class="btn background-color">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        <main role="main" class="pb-3">
+
+            <link rel="stylesheet" href="~/css/landingPage.css" asp-append-version="true" />
+            <style>
+                html {
+                    font-size: 14px;
+                }
+
+                main {
+                    background-color: var(--back-color1)
+                }
+
+                @media (min-width: 768px) {
+                    html {
+                        font-size: 16px;
+                    }
+                }
+
+                html {
+                    position: relative;
+                    min-height: 100%;
+                }
+
+                section {
+                    margin-bottom: 80px;
+                }
+
+                header {
+                    background-color: transparent;
+                    position: fixed;
+                    width: 100%;
+                    top: 0;
+                    z-index: 1000;
+                    transition: background-color 0.3s ease;
+                }
+
+                    header.solid {
+                        background-color: var(--back-color1);
+                    }
+
+                body {
+                    width: 100%;
+                    border: 2px solid var(--bs-color-orange);
+                }
+
+                i {
+                    color: var(--bs-color-orange);
+                }
+
+                li {
+                    padding-right: 10px;
+                }
+
+                h1, h2, h3 {
+                    font-weight: 600;
+                    color: var(--text-color2);
+                }
+
+                p, h7 {
+                    color: var(--text-color2);
+                    font-weight: normal;
+                    margin-top: initial;
+                }
+
+                .text-color-default {
+                    color: var(--text-color-default) !important;
+                }
+
+                .text-white {
+                    color: var(--text-color2);
+                }
+
+                .text-orange {
+                    color: var(--text-color1);
+                }
+
+                .reposive-footer {
+                    max-width: 100%;
+                    background-color: var(--back-color1);
+                }
+
+                .footer-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(249px, 1fr));
+                    margin: 0 10%;
+                    padding: 45px;
+                    gap: 30px;
+                }
+
+                .footer-contact-us {
+                    display: grid;
+                    grid-template-columns: 1fr 8fr;
+                    align-items: center;
+                    margin-top: 7px;
+                }
+
+                :root {
+                    --bs-body-font-family: 'Poppins', sans-serif;
+                    --bs-body-font-weight: 580;
+                    --bs-body-color: white;
+                    --bs-color-orange: #EE7406;
+                    --bs-color-orange-bold: #DE5F10;
+                    --bs-color-green: #234923;
+                    /*----text-color------------------*/
+                    --text-color1: #f98a33; /*orange*/
+                    --text-color2: white; /*white*/
+                    --text-color3: #828282; /* gray*/
+                    /*----background-color------------------*/
+                    --back-color1: black /*#1d1b1b*/; /*green*/
+                    --back-color2: #0d0d0d /*#1d1b1b*/; /*green*/
+                    --back-color3: #234923;
+                }
+
+
+                .container-text-banner {
+                    position: absolute;
+                    top: 40%;
+                    left: 30%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+
+                .text-banner1 {
+                    color: black;
+                    -webkit-text-stroke: 2px #f98a33;
+                    font-weight: 800;
+                }
+
+                .text-banner2 {
+                    color: white;
+                }
+
+                .banner-human {
+                    position: absolute;
+                    text-align: end;
+                }
+
+                    .banner-human img {
+                        max-width: 80%;
+                    }
+
+                .aboutUs-icon {
+                    width: 50px;
+                }
+
+                .background-color {
+                    background: var(--bs-color-orange);
+                    color: white;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                }
+
+                .wcu-container-gird {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                    gap: 50px;
+                    background: var(--back-color2);
+                    padding: 40px;
+                    border-radius: 57px 0 0 57px;
+                    border: 2px solid var(--bs-color-orange);
+                }
+
+                .wcu-title {
+                    display: flex !important;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    margin: 30px 0;
+                }
+
+                    .wcu-title p {
+                        width: 600px;
+                    }
+
+
+                .wcu-container-fluid-grid {
+                    display: grid;
+                    grid-template-columns: 3fr 1fr;
+                }
+
+                .wcu-grid-img img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 0 57px 57px 0;
+                    border-width: 2px 2px 2px 0;
+                    border-style: solid;
+                    border-color: var(--bs-color-orange);
+                }
+
+                .wcu-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 5fr;
+                    grid-template-rows: 2fr 5fr;
+                }
+
+                .ms-container-fluid-gird {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                    gap: 15px;
+                }
+
+                .ms-container {
+                    border-radius: 14px;
+                    border: 2px solid var(--bs-color-orange);
+                    border-bottom: 0px;
+                    padding: 50px 50px 0 50px;
+                    background: var(--back-color2);
+                    position: relative;
+                    transition: transform 0.3s ease;
+                }
+
+                    .ms-container::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        border-radius: 0 0 0 13px;
+                        border-width: 0 0 2px 0;
+                        border-style: solid;
+                        border-color: var(--bs-color-orange);
+                        width: 50px;
+                        height: 30px;
+                        left: 0;
+                    }
+
+                    .ms-container::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        border-radius: 0 0 13px 0;
+                        border-width: 0 0 2px 0;
+                        border-style: solid;
+                        border-color: var(--bs-color-orange);
+                        width: 50px;
+                        height: 30px;
+                        right: 0;
+                    }
+
+                .ms-container-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 6fr;
+                    align-items: center;
+                    margin-bottom: 30px;
+                }
+
+                .container-fluid-bt {
+                    border: 2px solid var(--bs-color-orange);
+                    border-bottom: 4px solid black;
+                    z-index: 10;
+                    border-radius: 10px 10px 0 0;
+                    background: var(--back-color1);
+                }
+
+                .ms-container .bt-container {
+                    margin: 20px 20px 0 20px;
+                    background: var(--back-color3);
+                    color: var(--text-color2);
+                    transition: transform 0.3s ease;
+                }
+
+                .ms-container .btn {
+                    color: var(--text-color2);
+                }
+
+                .ms-container .bt-container:hover {
+                    transform: scale(1.1);
+                    grid-column: span 2;
+                }
+
+                .responsive-banner {
+                    width: 100%;
+                    height: auto;
+                    box-sizing: border-box;
+                }
+
+                .fbc-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill,minmax(276px,1fr));
+                    gap: 50px;
+                }
+
+                .fbc-container {
+                    background: linear-gradient(178deg, var(--back-color2) 22%, black 126%);
+                    border-bottom: 5px solid var(--bs-color-orange);
+                }
+
+                    .fbc-container > * {
+                        margin: 16px;
+                    }
+
+                        .fbc-container > *:last-child {
+                            margin: 25px 0 15px 0;
+                        }
+
+                .fbc-grid img {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    border-radius: 3rem;
+                }
+
+                .fbc-container > p:first-child {
+                    height: 72px;
+                }
+
+                .fbc-container:nth-child(n + 5) {
+                    display: none;
+                }
+
+                .fbc-container {
+                    opacity: 0.2;
+                }
+
+                    .fbc-container.show {
+                        transform: scale(1.15);
+                        opacity: 1;
+                    }
+
+                #prevBtn, #nextBtn {
+                    position: absolute;
+                    bottom: 0;
+                    cursor: pointer;
+                    top: 50%;
+                }
+                #nextBtn {
+                    right: 10px;
+                }
+
+
+            </style>
+            <section>
+                <div class="row">
+                    <div class="col">
+                        <div class="position-relative">
+                            <img class="responsive-banner" src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716101432/WebASP/banner/banner-gymmer.png" />
+                            <div class="container-text-banner">
+                                <h1 class="text-banner1 ">Unleash Strength</h1>
+                                <h1 class="text-banner2 fw-bold">Shape Tomorrow</h1>
+                            </div>
+                            <div class="banner-human">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container" data-aos="zoom-in-right" data-aos-duration="400">
+                <div class="wcu-title">
+                    <h2>Why Choose Us</h2>
+                    <p>At XiTrum, we're not just another gym, we're your fitness family. Our commitment to your well-being goes beyond providing state-of-the-art equipment and facilities. Here's why you should choose us:</p>
+                </div>
+                <div class="wcu-container-fluid-grid">
+                    <div class="wcu-container-gird">
+                        <div class="wcu-grid">
+                            <img class="aboutUs-icon" src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716104513/WebASP/icon/aboutus-icon1.png" />
+                            <h3>Best Training</h3>
+                            <p></p>
+                            <p>Our team of certified trainers is dedicated to helping you achieve your fitness goals safely and effectively. Whether you're a beginner or a seasoned athlete, we're here to support and guide you every step of the way</p>
+                        </div>
+                        <div class="wcu-grid">
+                            <img class="aboutUs-icon" src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716104514/WebASP/icon/aboutus-icon2.png" />
+                            <h3>Variety of Programs</h3>
+                            <p></p>
+                            <p>From high-intensity interval training (HIIT) to yoga and everything in between, we offer a diverse range of classes and programs to keep your workouts exciting and challenging.</p>
+                        </div>
+
+                        <div class="wcu-grid">
+                            <img class="aboutUs-icon" src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716104506/WebASP/icon/aboutus-icon3.png" />
+                            <h3>Community Atmosphere</h3>
+                            <p></p>
+                            <p>Joining our gym means becoming part of a supportive and motivating community. You'll find encouragement, accountability, and friendship among fellow members and staff alike.</p>
+                        </div>
+                        <div class="wcu-grid">
+                            <img class="aboutUs-icon" src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716104515/WebASP/icon/aboutus-icon4.png" />
+                            <h3>Clean and Safe Environment</h3>
+                            <p></p>
+                            <p>Your health and safety are our top priorities. We maintain a clean and sanitized facility, adhere to strict safety protocols, and provide ample space for social distancing</p>
+                        </div>
+
+                    </div>
+                    <div class="wcu-grid-img">
+                        <img src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716105430/WebASP/img/side-view-woman-running.jpg" />
+                    </div>
+                </div>
+
+            </section>
+            <section class="container" data-aos="flip-left"
+                     data-aos-easing="ease-out-cubic"
+                     data-aos-duration="400">
+                <div class="wcu-title">
+                    <h2>MemberShip</h2>
+                    <p>Gym session walk can help. Physical activity stimulates many brain chemicals the may leave you</p>
+                </div>
+                <div class="ms-container-fluid-gird">
+                    <div class="ms-container">
+                        <div class="text-center">
+                            <h3>Basic</h3>
+                            <p>20/mo</p>
+                        </div>
+                        <hr />
+                        <div class="ms-container-grid">
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Gym without Trainers</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Unilimited Access</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Access to all Clubs</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Trainning for all Classes</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Excusive Studio</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Additional Session</h7>
+                        </div>
+                        <div class="text-center container-fluid-bt">
+                            <div class="bt-container rounded-pill ">
+                                <a class="btn ">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-container">
+                        <div class="text-center">
+                            <h3>Basic</h3>
+                            <p>20/mo</p>
+                        </div>
+                        <hr />
+                        <div class="ms-container-grid">
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Gym without Trainers</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Unilimited Access</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Access to all Clubs</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Trainning for all Classes</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Excusive Studio</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Additional Session</h7>
+                        </div>
+                        <div class="text-center container-fluid-bt">
+                            <div class="bt-container rounded-pill ">
+                                <a class="btn ">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-container">
+                        <div class="text-center">
+                            <h3>Basic</h3>
+                            <p>20/mo</p>
+                        </div>
+                        <hr />
+                        <div class="ms-container-grid">
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Gym without Trainers</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Unilimited Access</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Access to all Clubs</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Trainning for all Classes</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Excusive Studio</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Additional Session</h7>
+                        </div>
+                        <div class="text-center container-fluid-bt">
+                            <div class="bt-container rounded-pill ">
+                                <a class="btn ">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-container">
+                        <div class="text-center">
+                            <h3>Basic</h3>
+                            <p>20/mo</p>
+                        </div>
+                        <hr />
+                        <div class="ms-container-grid">
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Gym without Trainers</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Unilimited Access</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Access to all Clubs</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Trainning for all Classes</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Excusive Studio</h7>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h7 class="m-2">Additional Session</h7>
+                        </div>
+                        <div class="text-center container-fluid-bt">
+                            <div class="bt-container rounded-pill ">
+                                <a class="btn ">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container" data-aos="fade-right">
+                <div class="wcu-title">
+                    <h2>Client's Feedback</h2>
+                    <p>Here are some customer feedback about us</p>
+                </div>
+                <div class="position-relative">
+                    <div id="prevBtn"><i class="fa-solid fa-chevron-left"></i></div>
+                    <div class="fbc-grid">
+                        <div class="fbc-container">
+                            <p>Great facilities and equipment, but could use more variety in fitness classes.</p>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716221322/WebASP/img/feedback1.jpg" />
+                                <p class="m-2">Pham Thanh Nguyen</p>
+                            </div>
+                        </div>
+                        <div class="fbc-container show">
+                            <p>Friendly staff and clean environment, but sometimes overcrowded during peak hours.</p>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716221322/WebASP/img/feedback2.jpg" />
+                                <p class="m-2">David Trans</p>
+                            </div>
+                        </div>
+                        <div class="fbc-container show">
+                            <p>Love the personalized training sessions, really helped me reach my fitness goals.</p>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716221322/WebASP/img/feedback3.jpg" />
+                                <p class="m-2">Quoc Hung</p>
+                            </div>
+                        </div>
+                        <div class="fbc-container">
+                            <p>Appreciate the convenient hours, makes it easier to fit workouts into my busy schedule.</p>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716221322/WebASP/img/feedback4.jpg" />
+                                <p class="m-2">The King</p>
+                            </div>
+                        </div>
+                        <div class="fbc-container">
+                            <p>Would appreciate more regular maintenance on machines to prevent breakdowns.</p>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716221322/WebASP/img/feedback5.jpg" />
+                                <p class="m-2">Kim Dung</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nextBtn"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+
+            </section>
+
+            @section Scripts{
+            <script>
+                $("#nextBtn").on("click", function () {
+                    $(".fbc-container").each(function () {
+                        var temp = $(this).next(".fbc-container");
+                        if ($(this).is(":last-child")) {
+                            temp = $(this).closest(".fbc-grid").eq(0);
+                        }
+                        $(this).replaceWith(temp);
+                    })
+                })
+            </script>
+
+            }
+
+
+        </main>
+    </div>
+    <footer class="border-top footer">
+        <div class="reposive-footer">
+            <div class="footer-grid">
+                <div class="p-3">
+                    <div class="d-flex justify-content-start align-items-center">
+                        <img style="width: 90px" src="https://res.cloudinary.com/dcpbdkeam/image/upload/v1716005844/WebASP/img/119998699_619408648744043_605742_ozomv3.png" />
+                        <h3 class="text-center">XITRUM GYM</h3>
+                    </div>
+                    <p></p>
+                    <div>
+                        <p>Every drop of sweat is a step closer to your goals. Push yourself beyond your limits, and watch your strength grow. Embrace the grind, for greatness awaits</p>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="footer-contact-us ">
+                        <i></i>
+                        <h3 class="mb-0" style="margin-top:9px">Contact Us</h3>
+                        <i></i>
+                        <hr>
+                        <i class="fa-solid fa-location-dot "></i>
+                        <h7>146/59/18 Vu Tung Street, Binh Thanh District, HCM city, VietNam</h7>
+                        <i class="fa-solid fa-phone"></i>
+                        <h7>+84349850500</h7>
+                        <i class="fa-solid fa-envelope"></i>
+                        <h7>xitrumgym@gmail.com</h7>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <p></p>
+                    <h3>Quick Link</h3>
+                    <hr />
+                    <p>Home</p>
+                    <p>About Us</p>
+                    <p>Register</p>
+                </div>
+                <div class="p-3">
+                    <p></p>
+                    <h3>Follow Us</h3>
+                    <hr />
+                    <p>Facebook</p>
+                    <p>Instagram</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
