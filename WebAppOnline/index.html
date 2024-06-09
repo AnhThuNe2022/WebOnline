@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebAppOnline</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="wwwroot/css/site.css" />
+    <link rel="stylesheet" href="wwwroot/css/landingPage.css" />
+
     <link rel="stylesheet" href="~/WebAppOnline.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <header id="myHeader">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
@@ -41,339 +42,8 @@
             </div>
         </nav>
     </header>
-
     <div>
         <main role="main" class="pb-3">
-
-            <link rel="stylesheet" href="~/css/landingPage.css" asp-append-version="true" />
-            <style>
-                html {
-                    font-size: 14px;
-                }
-
-                main {
-                    background-color: var(--back-color1)
-                }
-
-                @media (min-width: 768px) {
-                    html {
-                        font-size: 16px;
-                    }
-                }
-
-                html {
-                    position: relative;
-                    min-height: 100%;
-                }
-
-                section {
-                    margin-bottom: 80px;
-                }
-
-                header {
-                    background-color: transparent;
-                    position: fixed;
-                    width: 100%;
-                    top: 0;
-                    z-index: 1000;
-                    transition: background-color 0.3s ease;
-                }
-
-                    header.solid {
-                        background-color: var(--back-color1);
-                    }
-
-                body {
-                    width: 100%;
-                    border: 2px solid var(--bs-color-orange);
-                }
-
-                i {
-                    color: var(--bs-color-orange);
-                }
-
-                li {
-                    padding-right: 10px;
-                }
-
-                h1, h2, h3 {
-                    font-weight: 600;
-                    color: var(--text-color2);
-                }
-
-                p, h7 {
-                    color: var(--text-color2);
-                    font-weight: normal;
-                    margin-top: initial;
-                }
-
-                .text-color-default {
-                    color: var(--text-color-default) !important;
-                }
-
-                .text-white {
-                    color: var(--text-color2);
-                }
-
-                .text-orange {
-                    color: var(--text-color1);
-                }
-
-                .reposive-footer {
-                    max-width: 100%;
-                    background-color: var(--back-color1);
-                }
-
-                .footer-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(249px, 1fr));
-                    margin: 0 10%;
-                    padding: 45px;
-                    gap: 30px;
-                }
-
-                .footer-contact-us {
-                    display: grid;
-                    grid-template-columns: 1fr 8fr;
-                    align-items: center;
-                    margin-top: 7px;
-                }
-
-                :root {
-                    --bs-body-font-family: 'Poppins', sans-serif;
-                    --bs-body-font-weight: 580;
-                    --bs-body-color: white;
-                    --bs-color-orange: #EE7406;
-                    --bs-color-orange-bold: #DE5F10;
-                    --bs-color-green: #234923;
-                    /*----text-color------------------*/
-                    --text-color1: #f98a33; /*orange*/
-                    --text-color2: white; /*white*/
-                    --text-color3: #828282; /* gray*/
-                    /*----background-color------------------*/
-                    --back-color1: black /*#1d1b1b*/; /*green*/
-                    --back-color2: #0d0d0d /*#1d1b1b*/; /*green*/
-                    --back-color3: #234923;
-                }
-
-
-                .container-text-banner {
-                    position: absolute;
-                    top: 40%;
-                    left: 30%;
-                    transform: translate(-50%, -50%);
-                    text-align: center;
-                    text-transform: uppercase;
-                }
-
-                .text-banner1 {
-                    color: black;
-                    -webkit-text-stroke: 2px #f98a33;
-                    font-weight: 800;
-                }
-
-                .text-banner2 {
-                    color: white;
-                }
-
-                .banner-human {
-                    position: absolute;
-                    text-align: end;
-                }
-
-                    .banner-human img {
-                        max-width: 80%;
-                    }
-
-                .aboutUs-icon {
-                    width: 50px;
-                }
-
-                .background-color {
-                    background: var(--bs-color-orange);
-                    color: white;
-                    padding: 10px 20px;
-                    font-size: 16px;
-                }
-
-                .wcu-container-gird {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                    gap: 50px;
-                    background: var(--back-color2);
-                    padding: 40px;
-                    border-radius: 57px 0 0 57px;
-                    border: 2px solid var(--bs-color-orange);
-                }
-
-                .wcu-title {
-                    display: flex !important;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                    margin: 30px 0;
-                }
-
-                    .wcu-title p {
-                        width: 600px;
-                    }
-
-
-                .wcu-container-fluid-grid {
-                    display: grid;
-                    grid-template-columns: 3fr 1fr;
-                }
-
-                .wcu-grid-img img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 0 57px 57px 0;
-                    border-width: 2px 2px 2px 0;
-                    border-style: solid;
-                    border-color: var(--bs-color-orange);
-                }
-
-                .wcu-grid {
-                    display: grid;
-                    grid-template-columns: 1fr 5fr;
-                    grid-template-rows: 2fr 5fr;
-                }
-
-                .ms-container-fluid-gird {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                    gap: 15px;
-                }
-
-                .ms-container {
-                    border-radius: 14px;
-                    border: 2px solid var(--bs-color-orange);
-                    border-bottom: 0px;
-                    padding: 50px 50px 0 50px;
-                    background: var(--back-color2);
-                    position: relative;
-                    transition: transform 0.3s ease;
-                }
-
-                    .ms-container::before {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        border-radius: 0 0 0 13px;
-                        border-width: 0 0 2px 0;
-                        border-style: solid;
-                        border-color: var(--bs-color-orange);
-                        width: 50px;
-                        height: 30px;
-                        left: 0;
-                    }
-
-                    .ms-container::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        border-radius: 0 0 13px 0;
-                        border-width: 0 0 2px 0;
-                        border-style: solid;
-                        border-color: var(--bs-color-orange);
-                        width: 50px;
-                        height: 30px;
-                        right: 0;
-                    }
-
-                .ms-container-grid {
-                    display: grid;
-                    grid-template-columns: 1fr 6fr;
-                    align-items: center;
-                    margin-bottom: 30px;
-                }
-
-                .container-fluid-bt {
-                    border: 2px solid var(--bs-color-orange);
-                    border-bottom: 4px solid black;
-                    z-index: 10;
-                    border-radius: 10px 10px 0 0;
-                    background: var(--back-color1);
-                }
-
-                .ms-container .bt-container {
-                    margin: 20px 20px 0 20px;
-                    background: var(--back-color3);
-                    color: var(--text-color2);
-                    transition: transform 0.3s ease;
-                }
-
-                .ms-container .btn {
-                    color: var(--text-color2);
-                }
-
-                .ms-container .bt-container:hover {
-                    transform: scale(1.1);
-                    grid-column: span 2;
-                }
-
-                .responsive-banner {
-                    width: 100%;
-                    height: auto;
-                    box-sizing: border-box;
-                }
-
-                .fbc-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill,minmax(276px,1fr));
-                    gap: 50px;
-                }
-
-                .fbc-container {
-                    background: linear-gradient(178deg, var(--back-color2) 22%, black 126%);
-                    border-bottom: 5px solid var(--bs-color-orange);
-                }
-
-                    .fbc-container > * {
-                        margin: 16px;
-                    }
-
-                        .fbc-container > *:last-child {
-                            margin: 25px 0 15px 0;
-                        }
-
-                .fbc-grid img {
-                    width: 50px;
-                    height: 50px;
-                    object-fit: cover;
-                    border-radius: 3rem;
-                }
-
-                .fbc-container > p:first-child {
-                    height: 72px;
-                }
-
-                .fbc-container:nth-child(n + 5) {
-                    display: none;
-                }
-
-                .fbc-container {
-                    opacity: 0.2;
-                }
-
-                    .fbc-container.show {
-                        transform: scale(1.15);
-                        opacity: 1;
-                    }
-
-                #prevBtn, #nextBtn {
-                    position: absolute;
-                    bottom: 0;
-                    cursor: pointer;
-                    top: 50%;
-                }
-                #nextBtn {
-                    right: 10px;
-                }
-
-
-            </style>
             <section>
                 <div class="row">
                     <div class="col">
@@ -626,23 +296,7 @@
                 </div>
 
             </section>
-
-            @section Scripts{
-            <script>
-                $("#nextBtn").on("click", function () {
-                    $(".fbc-container").each(function () {
-                        var temp = $(this).next(".fbc-container");
-                        if ($(this).is(":last-child")) {
-                            temp = $(this).closest(".fbc-grid").eq(0);
-                        }
-                        $(this).replaceWith(temp);
-                    })
-                })
-            </script>
-
-            }
-
-
+x
         </main>
     </div>
     <footer class="border-top footer">
@@ -690,10 +344,10 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="wwwroot/js/site.js" asp-append-version="true"></script>
 </body>
 </html>
