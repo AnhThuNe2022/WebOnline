@@ -16,10 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\thu\source\repos\WebAppOnline - Copy\WebAppOnline
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/thu/source/repos/WebAppOnline - Copy/WebAppOnline/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = aW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/thu/source/repos/WebAppOnline - Copy/WebAppOnline/Views/Home/CheckTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGVja1RhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
