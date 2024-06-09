@@ -1,4 +1,5 @@
 ﻿//Scroll
+AOS.init();
 window.onscroll = function () { myFunction() };
 var header = document.getElementById("myHeader");
 var sticky = header.offsetTop;
@@ -9,3 +10,4 @@ function myFunction() {
         header.classList.remove("solid");
     }
 }
+
